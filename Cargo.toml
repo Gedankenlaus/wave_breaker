@@ -1,0 +1,16 @@
+[package]
+name = "rust_sim"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+iced = {version="0.13.1", features = ["debug", "canvas", "image", "tokio"]}
+image = "0.25.8"
+itertools = "0.14.0"
+log = "0.4.28"
+num-complex = "0.4"
+rand = "0.9.2"
+
+[[bin]]
+name = "rust_sim"
+path = "main.rs"
