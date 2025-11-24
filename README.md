@@ -7,11 +7,13 @@ The goal is to simulate proper quantum interactions in a 2D field that can repro
 ### Problem Statement
 
 Given (electric) wave field 
+
 $$
 \psi(\mathbf{r},t): \R^2 \times \R \rightarrow \mathbb{C}
 $$
 
 subject to
+
 $$
 \nabla^2 \psi = \frac{1}{c^2} \frac{ \partial^2 \psi}{\partial t^2} \ \Leftrightarrow \ c^2 \cdot \nabla^2 \psi = \frac{ \partial^2 \psi}{\partial t^2}
 $$
@@ -55,6 +57,7 @@ we get the momentum of the field and finally:
 $$
 \psi(\mathbf{r},t) = \int  \dot{\psi}(\mathbf{r},t) dt = \int \int  c^2 \cdot \nabla^2 \psi \ dt^2
 $$
+
 to get the (electric) wave field.
 
 ### Discretization
