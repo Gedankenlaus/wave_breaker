@@ -9,7 +9,7 @@ The goal is to simulate proper quantum interactions in a 2D field that can repro
 Given (electric) wave field 
 
 $$
-\psi(\mathbf{r},t): \R^2 \times \R \rightarrow \mathbb{C}
+\psi(\mathbf{r},t): \R^2 \times \mathbb{R} \rightarrow \mathbb{C}
 $$
 
 subject to
@@ -62,7 +62,7 @@ to get the (electric) wave field.
 
 ### Discretization
 
-The wave field and momentum field are discretized into 2-dimensional grids (formally notated as $\Psi_i[\mathbf{n}]: (\N_0^2 \rightarrow F_b)_i$ and $\dot{\Psi}_i[\mathbf{n}]: (\N_0^2 \rightarrow F_b)_i$, where $F_b$ is the floating point set of bit length $b$) that form a series of discrete timesteps $i$ which evolves the field $\Psi_i[\mathbf{n}] \rightarrow \Psi_{i+1}[\mathbf{n}]$. The discrete timesteps have duration $\Delta t$ and spatial distance $h$ (note that the special distance is the same for both dimensions). The initial conditions of $\Psi_0[\mathbf{n}]$ and $\dot{\Psi}_0[\mathbf{n}]$ are known.
+The wave field and momentum field are discretized into 2-dimensional grids (formally notated as $\Psi_i[\mathbf{n}]: (\mathbb{N}_0^2 \rightarrow \mathbb{F}_b)_i$ and $\dot{\Psi}_i[\mathbf{n}]: (\mathbb{N}_0^2 \rightarrow \mathbb{F}_b)_i$, where $\mathbb{F}_b$ is the floating point set of bit length $b$) that form a series of discrete timesteps $i$ which evolves the field $\Psi_i[\mathbf{n}] \rightarrow \Psi_{i+1}[\mathbf{n}]$. The discrete timesteps have duration $\Delta t$ and spatial distance $h$ (note that the special distance is the same for both dimensions). The initial conditions of $\Psi_0[\mathbf{n}]$ and $\dot{\Psi}_0[\mathbf{n}]$ are known.
 
 Generally, second order partial deriviative can be written as an concatenation of the Laplacian operator:
 
@@ -70,7 +70,7 @@ $$
 (\nabla^2 \circ \psi)(\mathbf{r}, t)
 $$
 
-The discrete Laplacian operator can be derived using finite differences. We will denote the discrete version as $D^2$ here. $D^2$ can be written as a stencil using finite differences:
+The discrete Laplacian operator can be derived using finite differences. We will denote the discrete version as $D^2$ here. $D^2$ can be written as a stencil:
 
 $$  D^2_h = \frac{1}{h^2} \begin{bmatrix}
 0 & 1 & 0\\
